@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tic-tac-toe
-        image: ghcr.io/vreguraman/devsecops-demo:sha-987d0bf2de0169299587e25260935311727d36f4
+        image: nginx:latest
         # Image will be automatically updated by CI/CD pipeline
         imagePullPolicy: Always
         ports:
@@ -40,5 +40,4 @@ spec:
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
-      imagePullSecrets:
-      - name: github-container-registry
+  
