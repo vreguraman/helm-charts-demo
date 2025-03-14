@@ -28,3 +28,7 @@ root@ip-172-31-22-218:~# echo MlJTbFUwb1YyeWo0ZVVXUQ==|base64 -d
 2RSlU0oV2yj4eUWQ
 
 kubectl port-forward -n argocd svc/argocd-server 8080:80 --address=0.0.0.0
+
+helm
+
+https://get.helm.sh/helm-v3.17.2-linux-amd64.tar.gz
