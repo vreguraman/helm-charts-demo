@@ -1,4 +1,4 @@
-#Install Kind in UBUNTU
+Install Kind in UBUNTU
 
 https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 
@@ -9,6 +9,11 @@ https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 
-apt install docker.io -y
+apt install docker.io
 
 kind create cluster --name demo
+
+#Argocd installation
+
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
