@@ -11,9 +11,20 @@ sudo mv ./kind /usr/local/bin/kind
 
 apt install docker.io
 
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+
 kind create cluster --name demo
 
 #Argocd installation
 
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+kubectl edit secret -n argocd argocd-initial-admin-secret
+
+root@ip-172-31-22-218:~# echo MlJTbFUwb1YyeWo0ZVVXUQ==|base64 -d
+2RSlU0oV2yj4eUWQ
+
+kubectl port-forward -n argocd svc/argocd-server 8080:80 --address=0.0.0.0
